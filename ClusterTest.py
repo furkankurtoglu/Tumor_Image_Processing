@@ -48,8 +48,3 @@ print("Nb. clusters:", len(clusters))
 imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 interactive = False
-ren = window.Renderer()
-ren.SetBackground(1, 1, 1)
-window.record(ren,imgray)
-if interactive:
-    window.show(ren)
