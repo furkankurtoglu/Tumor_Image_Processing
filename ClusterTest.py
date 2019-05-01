@@ -11,8 +11,9 @@ from dipy.segment.clustering import QuickBundles
 import matplotlib.pyplot as plt
 from dipy.segment.metric import IdentityFeature, Feature
 from dipy.segment.metric import AveragePointwiseEuclideanMetric, EuclideanMetric, SumPointwiseEuclideanMetric
-from dipy.viz import window, actor
 
+#%%
+import dipy.viz
 
 #%% Importing Image
 img = cv2.imread('final.jpg')
@@ -48,3 +49,8 @@ print("Nb. clusters:", len(clusters))
 imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 interactive = False
+ren = window.Renderer()
+ren.SetBackground(1, 1, 1)
+window.record(ren,imgray)
+if interactive:
+    window.show(ren)
